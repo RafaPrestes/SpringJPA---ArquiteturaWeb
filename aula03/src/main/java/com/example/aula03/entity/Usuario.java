@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "tb_usuario")
+@Table(name = "tb_usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,8 +23,7 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name = "perfil_id")
     private Perfil perfil;
-    
-    
+
     public Usuario() {
     }
 
@@ -69,9 +68,8 @@ public class Usuario {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return "ID: " + id + ", Nome: " + nome + ", Perfil:" + perfil + 
-        (perfil != null ? perfil.getNome() : "");
+        return "Id: " + id + ", nome: " + nome + ", Perfil: " +
+                (perfil != null ? perfil.getNome() : "");
     }
 
     public Perfil getPerfil() {
@@ -82,7 +80,4 @@ public class Usuario {
         this.perfil = perfil;
     }
 
-    
-
-    
 }
